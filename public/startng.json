@@ -1,0 +1,9 @@
+{
+  "leaderboard": {
+    "stats": [
+      { "key": "dodges", "label": "Traffic dodged", "order": "highest" },
+      { "key": "distance", "label": "Distance", "order": "highest" },
+      { "key": "time", "label": "Ride time", "order": "highest", "format": "time" }
+    ]
+  }
+}

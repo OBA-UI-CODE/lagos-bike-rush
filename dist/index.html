@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#071414" />
+    <meta name="description" content="Dodge Lagos traffic, survive the rising speed and top the start.ng leaderboard." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Lagos Bike Rush</title>
+    <script type="module" crossorigin src="./assets/index-D20T2OZR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D7tkdtb9.css">
+  </head>
+  <body>
+    <canvas id="game" aria-label="Lagos Bike Rush 3D game"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Lagos Bike Rush home"><span>LBR</span> Lagos Bike Rush</a>
+      <div class="top-actions">
+        <button id="sound-button" class="icon-button" type="button" aria-label="Mute sound">♪</button>
+        <button id="pause-button" class="icon-button hidden" type="button" aria-label="Pause game">Ⅱ</button>
+      </div>
+    </header>
+
+    <section id="player-card" class="player-card hidden" aria-label="Start.ng player">
+      <img id="player-face" alt="" />
+      <div><strong id="player-name">Guest</strong><span id="player-account">Start.ng guest</span></div>
+      <button id="sign-in-button" type="button">Sign in</button>
+    </section>
+
+    <main>
+      <section id="hud" class="hud hidden" aria-label="Ride information">
+        <div><span>DODGED</span><strong id="dodge-count">0</strong></div>
+        <div class="speed"><span>SPEED</span><strong id="speed-value">72</strong><small>KM/H</small></div>
+        <div><span>DISTANCE</span><strong id="distance-value">0.00</strong><small>KM</small></div>
+      </section>
+
+      <section id="start-screen" class="panel start-panel">
+        <p class="eyebrow">ENDLESS LAGOS TRAFFIC</p>
+        <h1>Own the gap.<br /><em>Survive the rush.</em></h1>
+        <p class="intro">Thread your bike through cars, danfos and buses. Every clean dodge makes the road faster. One hit ends the ride.</p>
+
+        <fieldset class="rider-picker">
+          <legend>Choose your rider</legend>
+          <label><input type="radio" name="rider" value="startng" checked /><span><b>Start.ng</b><small>Your official character</small></span></label>
+          <label><input type="radio" name="rider" value="monkey" /><span><b>Monkey</b><small>Street legend</small></span></label>
+          <label><input type="radio" name="rider" value="robot" /><span><b>Robot</b><small>Chrome commuter</small></span></label>
+        </fieldset>
+
+        <button id="start-button" class="primary-button" type="button">Start riding <span>→</span></button>
+        <p class="controls-copy">Steer with A / D, arrow keys or touch</p>
+      </section>
+
+      <section id="countdown" class="countdown hidden" aria-live="assertive">3</section>
+
+      <section id="pause-screen" class="panel compact hidden">
+        <p class="eyebrow">RIDE PAUSED</p>
+        <h2>Catch your breath.</h2>
+        <button id="resume-button" class="primary-button" type="button">Back to traffic</button>
+      </section>
+
+      <section id="game-over" class="panel result-panel hidden" aria-live="polite">
+        <p class="eyebrow">RIDE OVER</p>
+        <h2>You met Lagos traffic.</h2>
+        <div class="result-grid">
+          <div><strong id="final-dodges">0</strong><span>vehicles dodged</span></div>
+          <div><strong id="final-distance">0.00 km</strong><span>distance</span></div>
+        </div>
+        <p id="score-message" class="score-message">Your next gap is waiting.</p>
+        <button id="restart-button" class="primary-button" type="button">Ride again <span>↻</span></button>
+        <button id="menu-button" class="text-button" type="button">Change rider</button>
+      </section>
+
+      <aside id="leaderboard" class="leaderboard hidden">
+        <button id="leaderboard-close" type="button" aria-label="Close leaderboard">×</button>
+        <p class="eyebrow">START.NG TOP RIDERS</p>
+        <h2>Street legends</h2>
+        <ol id="leaderboard-list"><li>Loading…</li></ol>
+      </aside>
+      <button id="leaderboard-button" class="leaderboard-button" type="button">Leaderboard</button>
+    </main>
+
+    <div id="touch-controls" class="touch-controls hidden" aria-label="Touch steering controls">
+      <button data-control="left" aria-label="Steer left">←</button>
+      <button data-control="right" aria-label="Steer right">→</button>
+    </div>
+
+    <div id="flash" class="flash"></div>
+  </body>
+</html>
